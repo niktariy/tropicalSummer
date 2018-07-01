@@ -1,0 +1,38 @@
+.header
+  background-color: rgba($white,1)
+  height: $header--mobile__height
+  position: fixed
+  top: 0
+  width: 100%
+  z-index: 10
+  &__container
+    font-family: 'Open sans', sans-serif
+    position: relative
+    height: inherit
+    width: 100%
+    +centered
+  &__logo
+    font-weight: bold
+    letter-spacing: 0.5px
+    color: $blueDark
+    &:hover
+      color: $blue
+  &__menu, &__login
+    @extend .flex
+    font-size: 14px
+  &__login
+    margin-left: 2.5vw
+    +align-items(center)
+    +cont
+      background-color: $blue
+      height: 30px
+      width: 1px
+      left: -2.5vw
+  @media screen and (min-width: 600px)
+    height: $header__height
+    &__container
+      +justify-content(space-between)
+    &__burger
+      +hidden
+    &__logo
+      color: $text-color

@@ -1,0 +1,17 @@
+.theme
+  $themes: ('morning': $pastel-pink, 'day': $pastel-orange, 'evening': $pastel-violet)
+  @each $theme, $color in $themes
+    &__#{$theme}
+      $base-color: $color
+      $base-circle: adjust-color($base-color, $lightness: -5%)
+      $base-color-shadow: adjust-color($base-color, $lightness: -12%)
+      $base-shadow: hsla(hue($base-color), 47%, 13%, 0.25)
+      background: $base-color
+      .title--main
+        text-shadow: 0 1vw 0 $base-color-shadow
+      .circle
+        background-color: $base-circle
+      .socials__link:hover
+        +box-shadow(0, 12px, 0, 0, $base-shadow)
+      .input-container > *
+        +box-shadow(0, 20px, 0, 0, $base-shadow)

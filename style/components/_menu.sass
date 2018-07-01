@@ -1,0 +1,39 @@
+.menu
+  color: $text-color
+  background-color: $white
+  font:
+    family: "TTNorms"
+    size: 14px
+    weight: 400
+    
+  &__list
+    @extend .flex
+    +align-items(center)
+
+  &__item
+    margin: 0 2.5vw
+
+  @media screen and (max-width: 600px)
+    +flex-dir(column)
+    display: none
+    padding: 16px 0
+    position: absolute
+    top: 74px
+    left: 0
+    &__list
+      +flex-dir(column)
+      +align-items(flex-start)
+      margin-bottom: 16px
+    &__link, .login-link a
+      display: block
+      height: 40px
+      padding: 0 16px
+      line-height: 40px
+    &:after
+      content: 'smallscreen'
+      +hidden
+    .login-link:after
+      width: calc(100% - 2.5vw)
+      height: 2px
+      top: -8px
+      left: 0

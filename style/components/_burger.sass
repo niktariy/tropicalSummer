@@ -1,0 +1,28 @@
+.burger
+  $padding: 8px
+  $height: 18px
+  $width: 26px
+  $burger_buns: ('top' ,'mid', 'bot')
+  left: 0
+  position: absolute
+  padding: $padding
+  height: $height + $padding*2
+  width: $width + $padding*2
+  cursor: pointer
+  &__buns
+    position: relative
+    height: $height
+    width: $width
+  @each $burger_bun in $burger_buns
+    $i: index($burger_buns, $burger_bun) - 1
+    .bun--#{$burger_bun}
+      top: $i * $padding
+  .bun--top, .bun--mid, .bun--bot
+    background-color: $blueDark
+    position: absolute
+    height: 2px
+    width: 100%
+    +transition(all 0.2s ease-out)
+
+  &:hover [class*="bun--"]
+    background-color: $blue

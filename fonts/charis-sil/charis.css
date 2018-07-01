@@ -1,0 +1,24 @@
+@font-face {
+    font-family: 'Charis SIL';
+    src: url("CharisSILR.ttf") format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Charis SIL';
+    src: url("CharisSILI.ttf") format('truetype');
+    font-weight: 400;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Charis SIL';
+    src: url("CharisSILB.ttf") format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Charis SIL';
+    src: url("CharisSILBI.ttf") format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}

@@ -1,0 +1,213 @@
+=box-sizing($boxsizing)
+  -webkit-box-sizing: $boxsizing
+  -moz-box-sizing: $boxsizing
+  box-sizing: $boxsizing
+
+=appearance($value)
+  -webkit-appearance: $value
+  -moz-appearance: $value
+  appearance: $value
+
+=user-select($prop)
+  -webkit-user-select: $prop
+  -moz-user-select: $prop
+  -ms-user-select: $prop
+  user-select: $prop
+
+=font($font-size, $addend)
+  font-size: $font-size
+  line-height: $font-size+$addend
+
+=c-font($size, $line, $weight, $upper: false)
+  +font($size, $line)
+  font-weight: $weight
+
+  @if $upper == true
+    text-transform: uppercase
+
+// Стилизация placeholder
+// пример: @include place($red);
+=place($cl)
+  &::-webkit-input-placeholder
+    color: $cl
+  &::-moz-placeholder
+    color: $cl
+  &:-moz-placeholder
+    color: $cl
+  &:-ms-input-placeholder
+    color: $cl
+
+//transition
+=transition($transition...)
+  -webkit-transition: $transition
+  -moz-transition: $transition
+  -o-transition: $transition
+  transition: $transition
+
+=transition-property($property...)
+  -webkit-transition-property: $property
+  -moz-transition-property: $property
+  -o-transition-property: $property
+  transition-property: $property
+
+=transition-duration($duration...)
+  -webkit-transition-property: $duration
+  -moz-transition-property: $duration
+  -o-transition-property: $duration
+  transition-property: $duration
+
+=transition-timing-function($timing...)
+  -webkit-transition-timing-function: $timing
+  -moz-transition-timing-function: $timing
+  -o-transition-timing-function: $timing
+  transition-timing-function: $timing
+
+=transition-delay($delay...)
+  -webkit-transition-delay: $delay
+  -moz-transition-delay: $delay
+  -o-transition-delay: $delay
+  transition-delay: $delay
+
+// скругление универсальное
+// пример: @include br(3px);
+=br($rad)
+  -webkit-border-radius: $rad
+  -moz-border-radius: $rad
+  -ms-border-radius: $rad
+  border-radius: $rad
+// Скругление на каждый угол
+// пример: @include br-c(10px,0,10px,0);
+=br-c($p1, $p2, $p3, $p4)
+  -webkit-border-radius: $p1 $p2 $p3 $p4
+  -moz-border-radius: $p1 $p2 $p3 $p4
+  -ms-border-radius: $p1 $p2 $p3 $p4
+  border-radius: $p1 $p2 $p3 $p4
+
+=circle($w,$h,$r)
+  +br($r)
+  width: $w
+  height: $h
+
+
+//box-shadow
+=box-shadow($top, $left, $blur, $stretching, $shadow, $inset: false, $none:false)
+  @if $inset
+    -webkit-box-shadow: inset $top $left $blur $stretching $shadow //Safari, Chrome
+    -moz-box-shadow: inset $top $left $blur $stretching $shadow // Firefox
+    box-shadow: inset $top $left $blur $stretching $shadow
+  @else if $none
+    -webkit-box-shadow: none
+    -moz-box-shadow: none
+    box-shadow: none
+  @else
+    -webkit-box-shadow: $top $left $blur $stretching $shadow //Safari, Chrome
+    -moz-box-shadow: $top $left $blur $stretching $shadow // Firefox
+    box-shadow: $top $left $blur $stretching $shadow
+
+//  background-size
+=bg-size($value)
+  -webkit-background-size: $value
+  -moz-background-size: $value
+  -o-background-size: $value
+  background-size: $value
+
+// усечение элемента применять к текстовым тегам типа "span" "p" и т.д.
+// пример: @include truncate(110px);
+=truncate($truncation-boundary)
+  max-width: $truncation-boundary
+  white-space: nowrap
+  overflow: hidden
+  text-overflow: ellipsis
+
+
+// after||before content
+=cont
+  position: relative
+  &:after
+    content: ""
+    display: block
+    position: absolute
+    @content
+
+// clearfix
+// пример: @include cfx;
+=cfx
+  &:after
+    content: "."
+    display: block
+    height: 0
+    clear: both
+    visibility: hidden
+
+=hidden()
+  display: none
+  visibility: hidden
+
+=visibility($property)
+  backface-visibility: $property
+  -moz-backface-visibility: $property
+  -webkit-backface-visibility: $property
+  visibility: $property
+
+=opacity($opacity)
+  $opacity-ie: $opacity * 100
+  filter: alpha(opacity=$opacity-ie)
+  opacity: $opacity
+
+=noselect()
+  -webkit-touch-callout: none /* iOS Safari */
+  -webkit-user-select: none /* Safari */
+  -khtml-user-select: none /* Konqueror HTML */
+  -moz-user-select: none /* Firefox */
+  -ms-user-select: none /* Internet Explorer/Edge */
+  user-select: none /* Non-prefixed version, currently supported by Chrome and Opera */
+
+// Transform elements
+// example: +transform(scaleY(-1))
+=transform($transforms)
+  -webkit-transform: $transforms
+  -moz-transform: $transforms
+  -ms-transform: $transforms
+  -o-transform: $transforms
+  transform: $transforms
+
+=transform-style($style)
+  -webkit-transform-style: $style
+  -moz-transform-style: $style
+  transform-style: $style
+
+=perspective($perspective)
+  -webkit-perspective: $perspective
+  -moz-perspective: $perspective
+  perspective: $perspective
+
+=keyframes($name)
+  @-webkit-keyframes #{$name}
+    @content
+  @-moz-keyframes #{$name}
+    @content
+  @-ms-keyframes #{$name}
+    @content
+  @keyframes #{$name}
+    @content
+
+=animation($delay, $duration, $animation)
+  -webkit-animation-delay: $delay
+  -webkit-animation-duration: $duration
+  -webkit-animation-name: $animation
+  -webkit-animation-fill-mode: forwards /* this prevents the animation from restarting! */
+
+  -moz-animation-delay: $delay
+  -moz-animation-duration: $duration
+  -moz-animation-name: $animation
+  -moz-animation-fill-mode: forwards /* this prevents the animation from restarting! */
+
+  -o-animation-delay: $delay
+  -o-animation-duration: $duration
+  -o-animation-name: $animation
+  -o-animation-fill-mode: forwards /* this prevents the animation from restarting! */
+
+  animation-delay: $delay
+  animation-duration: $duration
+  animation-name: $animation
+  animation-fill-mode: forwards /* this prevents the animation from restarting! */

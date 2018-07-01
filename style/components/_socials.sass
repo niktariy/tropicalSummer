@@ -1,0 +1,31 @@
+.socials
+  +centered
+  width: 100%
+  z-index: 4
+
+  &__link
+    border: 1px solid $blueDark
+    color: $blueDark
+    padding: 11px
+    margin: 16px 12px 0
+    +centered
+    +circle (35px, 35px, 50%)
+    +transition(all 0.2s ease-out)
+    img
+      object-fit: contain
+      width: 100%
+      height: 100%
+    &:hover
+      background-color: $white
+      border-color: transparent
+
+  @media screen and (min-width: 600px)
+    position: absolute
+    width: auto
+    right: 4%
+    bottom: 4%
+    &__link
+      border-color: transparent
+      padding: 16px
+      margin: 0 5px
+      +circle (50px, 50px, 50%)

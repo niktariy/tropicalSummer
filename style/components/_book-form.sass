@@ -1,0 +1,50 @@
+.book-form
+  width: 100%
+  bottom: 17%
+  left: 50%
+  margin: 0 auto
+  position: absolute
+  padding: 0 24px
+  +transform(translateX(-50%))
+  z-index: 5
+
+  .input-container
+    @extend .flex
+    margin: 0 auto
+    max-width: 400px
+    width: 100%
+    height: calc(56px + (82 - 56) * ((100vw - 300px) / (2100 - 300)))
+    > *
+      +appearance(none)
+      background: $white
+      border: 0px solid transparent
+      border-bottom-width: 2px
+      height: 100%
+      margin: 0
+      padding: calc(20px + (32 - 20) * ((100vw - 300px) / (2100 - 300)))
+      +transition(border 0.15s ease-in, color 0.15s ease-out)
+
+  &__input
+    font-family: "TTNorms"
+    +font(15px, 5)
+
+    flex: 5
+    &:focus
+      outline: none
+      border-bottom-color: $blueDark !important
+
+  &__button
+    color: $blueDark
+    cursor: pointer
+    font:
+      size: 24px
+      weight: bold
+      family: 'BebasNeue', sans-serif
+    text-transform: uppercase
+    flex: 1
+    &:hover, &:focus
+      border-bottom-color: $blueDark !important
+    &:hover
+      color: $blue
+    &:focus
+      outline-color: $blueDark
