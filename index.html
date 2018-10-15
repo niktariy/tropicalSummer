@@ -60,53 +60,55 @@
         </div>
     </header>
     <main class="main theme">
-        <div class="grid">
-            <div class="grid__row">
-                <div class="main__titles">
-                    <h3 class="title--welcome">Welcome to event8.io</h3>
-                    <h1 class="title title--main">tropical summer</h1>
+        <section class="section section_hero">
+            <div class="grid">
+                <div class="grid__row">
+                    <div class="main__titles">
+                        <h3 class="title--welcome">Welcome to event8.io</h3>
+                        <h1 class="title title--main">tropical summer</h1>
+                    </div>
+                </div>
+                <div class="grid__row">
+                    <ul class="socials">
+                        <li class="socials__item">
+                            <a class="socials__link"
+                               href="twitter">
+                                <img src="img/socials/twitter.svg">
+                            </a>
+                        </li>
+                        <li class="socials__item">
+                            <a class="socials__link"
+                               href="instagram">
+                                <img src="img/socials/instagram.svg">
+                            </a>
+                        </li>
+                        <li class="socials__item">
+                            <a class="socials__link"
+                               href="facebook">
+                                <img src="img/socials/facebook.svg">
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
-            <div class="grid__row">
-                <ul class="socials">
-                    <li class="socials__item">
-                        <a class="socials__link"
-                            href="twitter">
-                            <img src="img/socials/twitter.svg">
-                        </a>
-                    </li>
-                    <li class="socials__item">
-                        <a class="socials__link"
-                            href="instagram">
-                            <img src="img/socials/instagram.svg">
-                        </a>
-                    </li>
-                    <li class="socials__item">
-                        <a class="socials__link"
-                            href="facebook">
-                            <img src="img/socials/facebook.svg">
-                        </a>
-                    </li>
-                </ul>
+            <div class="flower flower--main"></div>
+            <div class="grid">
+                <div class="grid__row">
+                    <form class="book-form" method="post">
+                        <div class="input-container">
+                            <input type="text" name="secret_number" placeholder="Enter your secret code"
+                                   class="book-form__input">
+                            <button type="send"
+                                    class="book-form__button">book</button>
+                        </div>
+                    </form>
+                </div>
             </div>
-        </div>
-        <div class="flower flower--main"></div>
-        <div class="grid">
-            <div class="grid__row">
-                <form class="book-form" method="post">
-                    <div class="input-container">
-                        <input type="text" name="secret_number" placeholder="Enter your secret code"
-                        class="book-form__input">
-                        <button type="send"
-                        class="book-form__button">book</button>
-                    </div>
-                </form>
+            <div class="main__circles js-circles">
+                <div class="circle circle--big" id="circle--big"></div>
+                <div class="circle circle--small" id="circle--small"></div>
             </div>
-        </div>
-        <div class="main__circles">
-            <div class="circle circle--big" id="circle--big"></div>
-            <div class="circle circle--small" id="circle--small"></div>
-        </div>
+        </section>
     </main>
 </body>
 <script type="text/javascript" src="libs/jquery.min.js"></script>

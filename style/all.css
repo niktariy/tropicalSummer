@@ -284,8 +284,7 @@ a {
 
 .main {
   min-height: calc(100vh - 88px);
-  margin-top: 88px;
-  padding: 10vw 0 0; }
+  margin-top: 88px; }
   .main__titles {
     text-align: center;
     margin: 0 auto;
@@ -306,6 +305,13 @@ a {
     -ms-transform: translate(-50%, -50%) translateZ(0);
     -o-transform: translate(-50%, -50%) translateZ(0);
     transform: translate(-50%, -50%) translateZ(0); }
+
+.section {
+  padding: 10vw 0 0;
+  position: relative;
+  height: 100%;
+  min-height: inherit;
+  overflow: hidden; }
 
 .socials {
   display: -webkit-box;
@@ -454,13 +460,18 @@ a {
   bottom: 0;
   left: 0;
   right: 0;
+  margin: auto;
+  max-height: 70vh;
+  height: 100%;
+  width: 90%;
   z-index: 3; }
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: 1200px) {
     .flower {
-      width: 42.36%;
-      margin: auto; } }
+      width: 43%;
+      max-height: 73vh; } }
   .flower img {
     width: 100%;
+    max-height: 100%;
     object-fit: contain;
     margin-left: -6vw; }
 
