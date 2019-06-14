@@ -1,3 +1,6 @@
+@import url(../fonts/bebas.css);
+@import url(../fonts/charis.css);
+@import url(../fonts/ttnorms.css);
 .flex, .header__menu, .header__login, .menu__list, .book-form .input-container {
   display: -webkit-box;
   display: -webkit-flex;
@@ -45,7 +48,7 @@ body {
   font-family: "Open sans", sans-serif; }
 
 .title--welcome {
-  font-family: "Charis SIL", arial;
+  font-family: "Charis SIL", Arial, sans-serif;
   font-weight: bold;
   color: #007993; }
 .title--main {
@@ -58,14 +61,15 @@ body {
   text-transform: uppercase;
   z-index: 3; }
 
-html, * {
+* {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
-body {
+html, body {
+  min-height: 100%;
   margin: 0; }
 
 h1, h2, h3, h4, h5, ul {
@@ -230,7 +234,7 @@ a {
 .menu {
   color: #464646;
   background-color: #ffffff;
-  font-family: "TTNorms";
+  font-family: "TTNorms", serif;
   font-size: 14px;
   font-weight: 400; }
   .menu__list {
@@ -418,7 +422,7 @@ a {
       -o-transition: border 0.15s ease-in, color 0.15s ease-out;
       transition: border 0.15s ease-in, color 0.15s ease-out; }
   .book-form__input {
-    font-family: "TTNorms";
+    font-family: "TTNorms", serif;
     font-size: 15px;
     line-height: 20px;
     flex: 5; }
