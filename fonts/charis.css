@@ -1,0 +1,31 @@
+@font-face {
+font-family: 'Charis SIL';
+src: url('charis-sil/CharisSIL-Bold.woff2') format('woff2'),
+     url('charis-sil/CharisSIL-Bold.woff') format('woff');
+font-weight: bold;
+font-style: normal;
+}
+
+@font-face {
+font-family: 'Charis SIL';
+src: url('charis-sil/CharisSIL.woff2') format('woff2'),
+     url('charis-sil/CharisSIL.woff') format('woff');
+font-weight: normal;
+font-style: normal;
+}
+
+@font-face {
+font-family: 'Charis SIL';
+src: url('charis-sil/CharisSIL-BoldItalic.woff2') format('woff2'),
+     url('charis-sil/CharisSIL-BoldItalic.woff') format('woff');
+font-weight: bold;
+font-style: italic;
+}
+
+@font-face {
+font-family: 'Charis SIL';
+src: url('charis-sil/CharisSIL-Italic.woff2') format('woff2'),
+     url('charis-sil/CharisSIL-Italic.woff') format('woff');
+font-weight: normal;
+font-style: italic;
+}

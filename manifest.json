@@ -1,0 +1,31 @@
+{
+  "short_name": "Summer",
+  "name": "Tropical Summer",
+  "description": "Page layout from png image with three themes depending on local time",
+  "lang": "en-US",
+  "icons": [
+    {
+      "src": "./img/favicon-16x16.ico",
+      "sizes": "16x16 72x72 96x96 128x128 256x256"
+    },
+    {
+      "src": "./img/pwa-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "./img/pwa-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }, {
+      "src": "./img/apple-touch-icon-180x180",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "orientation": "portrait-primary",
+  "start_url": "./index.html/?utm_source=a2hs",
+  "background_color": "#C4ADFD",
+  "display": "standalone",
+  "theme_color": "#C4ADFD"
+}

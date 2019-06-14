@@ -1,65 +1,76 @@
-$(function () {
-  let main = $('.theme'),
-      flower = $('.flower--main'),
-      flower_image = '<img src="img/Veron_flower.svg">',
-      hours = new Date().getHours(),
-      pink_color = 'rgb(255, 204, 213)',
-      violet_color = 'rgb(217, 204, 255)',
-      orange_color = 'rgb(255, 230, 204)';
+let $mainTheme = document.getElementsByClassName('main')[0];
+let $flower = document.getElementsByClassName('flower--main')[0];
+let $burgerButton = document.getElementsByClassName('burger')[0];
+let cBig = document.getElementById('circle--big');
+let cSmall = document.getElementById('circle--small');
+let pink_color = 'rgb(255, 204, 213)';
+let violet_color = 'rgb(217, 204, 255)';
+let orange_color = 'rgb(255, 230, 204)';
+let bigSize = 0;
+let smallSize = 0;
 
-  let openMenu = function () {
-    if (document.body.clientWidth <= 600) {
-      $('.burger').on('click', function () {
-        $('.menu').fadeToggle(200);
-      });
-    }
-  };
+window.addEventListener('resize', handleResize);
+window.addEventListener('load', handleResize);
+openMenu();
+setInterval(setMainColor(), 1800);
 
-  openMenu();
+function openMenu() {
+  if (document.body.clientWidth <= 600) {
+    $burgerButton.addEventListener('click', function () {
+      document.getElementsByClassName('menu')[0].fadeToggle(200);
+    });
+  }
+}
 
-  let setMainColor = function (time) {
-    if (time >= 4 && time < 11) {
-      main.addClass('theme__morning');
-    } else if (time >= 11 && time <= 18) {
-      main.addClass('theme__day');
-    } else {
-      main.addClass('theme__evening');
-    }
-  };
+function setMainColor() {
+  let time = new Date().getHours();
+  let mainClasses = $mainTheme.classList;
 
-  setInterval(setMainColor(hours), 1800);
+  if (time >= 4 && time < 11) {
+    mainClasses.add('theme__morning');
+  } else if (time >= 11 && time <= 18) {
+    mainClasses.add('theme__day');
+  } else {
+    mainClasses.add('theme__evening');
+  }
+  switchTheme();
+}
 
-  switch ($('.main').css('background-color')) {
+function switchTheme() {
+  let currentBackgroundColor = getComputedStyle($mainTheme).getPropertyValue("background-color");
+  let flowerImage = document.createElement('img');
+  flowerImage.setAttribute('alt', 'main flower');
+
+  switch (currentBackgroundColor) {
     case pink_color:
-      flower.append(flower_image);
+      flowerImage.setAttribute('src', 'img/Veron_flower.svg');
       break;
     case violet_color:
-      flower.append(flower_image);
+      flowerImage.setAttribute('src', 'img/Veron_flower.svg');
       break;
     case orange_color:
-      flower.append(flower_image);
+      flowerImage.setAttribute('src', 'img/Veron_flower.svg');
       break;
     default:
-      flower.append(flower_image);
+      flowerImage.setAttribute('src', 'img/Veron_flower.svg');
       break;
   }
+  $flower.appendChild(flowerImage);
+}
 
-  let cBig = $('#circle--big'),
-      cSmall = $('#circle--small'),
-      bigSize,
-      smallSize;
+function handleResize() {
+  let bodyHeight = document.body.clientHeight;
 
-  $(window).bind("resize load", function () {
-    let bodyHeight = document.body.clientHeight;
+  bigSize = bodyHeight / 2 + 120;
+  smallSize = bodyHeight / 16;
 
-    bigSize = bodyHeight / 2 + 120;
-    smallSize = bodyHeight / 16;
+  setCirclesSize(bigSize, smallSize);
+}
 
-    let setCirclesSize = function (s1, s2) {
-      cBig.height(s1).width(s1);
-      cSmall.height(s2).width(s2);
-    };
-    setCirclesSize(bigSize, smallSize);
+function setCirclesSize(s1, s2) {
+  cBig.style.height = s1;
+  cBig.style.width = s1;
 
-  });
-});
+  cSmall.style.height = s2;
+  cSmall.style.width = s2;
+}

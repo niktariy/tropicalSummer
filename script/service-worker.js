@@ -1,12 +1,13 @@
-'use strict';
+"use strict";
 
 // Incrementing CACHE_VERSION will kick off the install event and force previously cached
 // resources to be cached again.
-let CACHE_NAME = 'my-site-cache-v1';
-let urlsToCache = [
+var CACHE_NAME = 'my-site-cache-v1';
+var urlsToCache = [
   '/',
   '/styles/main.css',
-  '/script/main.js'
+  '/script/main.js',
+  '/fonts/bebas/BebasNeue-Bold.woff'
 ];
 
 self.addEventListener('install', event => {
