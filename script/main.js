@@ -59,12 +59,13 @@ function switchTheme() {
 }
 
 function handleResize() {
+  debugger;
   let bodyHeight = document.body.clientHeight;
 
   bigSize = bodyHeight / 2 + 120;
   smallSize = bodyHeight / 16;
 
-  setCirclesSize(bigSize, smallSize);
+  setCirclesSize(bigSize + 'px', smallSize + 'px');
 }
 
 function setCirclesSize(s1, s2) {

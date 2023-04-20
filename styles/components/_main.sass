@@ -8,15 +8,20 @@
     margin: 0 auto
     z-index: 2
 
-  @media screen and (min-width: 600px)
-    min-height: calc(100vh - #{$header__height})
-    margin-top: $header__height
-    &__titles
-      text-align: left
-
   &__circles
-    top: 50%
+    bottom: -40vh
     left: 50%
     position: absolute
     z-index: 1
     +transform(translate(-50%,-50%) translateZ(0))
+
+  @media screen and (min-width: 600px)
+    min-height: calc(100vh - #{$header__height})
+    margin-top: $header__height
+
+    &__titles
+      text-align: left
+
+    &__circles
+      top: 50%
+      bottom: unset

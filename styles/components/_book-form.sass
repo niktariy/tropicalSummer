@@ -1,4 +1,7 @@
 .book-form
+  --border-width: 2px
+  --field-pad-y: 16px
+
   width: 100%
   bottom: 17%
   left: 50%
@@ -10,6 +13,7 @@
 
   .input-container
     @extend .flex
+    +align-items(center)
     margin: 0 auto
     max-width: 400px
     width: 100%
@@ -18,10 +22,10 @@
       +appearance(none)
       background: $white
       border: 0px solid transparent
-      border-bottom-width: 2px
+      border-bottom-width: var(--border-width)
       height: 100%
       margin: 0
-      padding: calc(20px + (32 - 20) * ((100vw - 300px) / (2100 - 300)))
+      padding: var(--field-pad-y) calc(20px + (32 - 20) * ((100vw - 300px) / (2100 - 300))) calc(var(--field-pad-y) - var(--border-width))
       +transition(border 0.15s ease-in, color 0.15s ease-out)
 
   &__input
