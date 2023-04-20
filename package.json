@@ -1,0 +1,24 @@
+{
+  "name": "tropicalsummer",
+  "version": "1.0.0",
+  "description": "This project is created exclusively for training purposes and does not carry any benefits.",
+  "main": "index.js",
+  "dependencies": {
+    "sass": "^1.62.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "watch": "sass --watch styles/index.sass styles/main.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/niktariy/tropicalSummer.git"
+  },
+  "author": "Veronika Novikova",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/niktariy/tropicalSummer/issues"
+  },
+  "homepage": "https://github.com/niktariy/tropicalSummer#readme"
+}
