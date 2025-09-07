@@ -88,5 +88,10 @@ Responsive design is implemented using media queries in CSS:
 
 ## Лицензия / License
 
-**Проект создан исключительно в обучающих целях.**
-*This project was created exclusively for training purposes and does not carry any benefits.*
+Этот проект лицензируется по **Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)**.
+
+This project is licensed under the **Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)** License.
+
+🔗 [Посмотреть полный текст лицензии](https://creativecommons.org/licenses/by-nc/4.0/legalcode)
+🔗 [View full license text](https://creativecommons.org/licenses/by-nc/4.0/legalcode)
+
